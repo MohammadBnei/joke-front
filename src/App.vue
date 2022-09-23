@@ -2,9 +2,12 @@
 import { onMounted, ref } from "vue";
 const joke = ref();
 const version = ref();
+const appVersion = import.meta.env.VITE_APP_VERSION;
+
+console.log(import.meta.env);
 
 onMounted(async () => {
-  const res = await fetch("http://localhost:3001");
+  const res = await fetch(import.meta.env.VITE_API_URL);
   const data = await res.json();
 
   joke.value = data.joke;
@@ -18,7 +21,9 @@ onMounted(async () => {
       <a class="btn btn-ghost normal-case text-xl"
         >API Version : {{ this.version }}</a
       >
-      <a class="btn btn-ghost normal-case text-xl">Front Version : 0.0.1</a>
+      <a class="btn btn-ghost normal-case text-xl"
+        >Front Version : {{ this.appVersion }}</a
+      >
     </div>
   </header>
 
