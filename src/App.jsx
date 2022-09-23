@@ -28,7 +28,6 @@ function App() {
         <a className="btn btn-ghost normal-case text-xl">
           Front Version : {process.env.REACT_APP_VERSION}
         </a>
-
         {loading && (
           <div class="flow-root">
             <div
