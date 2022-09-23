@@ -18,6 +18,7 @@ onMounted(async () => {
       <a class="btn btn-ghost normal-case text-xl"
         >API Version : {{ this.version }}</a
       >
+      <a class="btn btn-ghost normal-case text-xl">Front Version : 0.0.1</a>
     </div>
   </header>
 
